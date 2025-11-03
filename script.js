@@ -50,9 +50,9 @@ function addToHistory(weight, height, imc, classification) {
     let history = JSON.parse(localStorage.getItem('imcHistory') || '[]');
     history.unshift(historyItem);
 
-    // BUG 3: Limita histórico a apenas 3 itens (deveria ser 5)
-    if (history.length > 3) {  // ❌ ERRADO: deveria ser > 5
-        history = history.slice(0, 3);
+    // Limita histórico aos últimos 5 cálculos
+    if (history.length > 5) {  // ✅ CORRETO: mantém 5 itens
+        history = history.slice(0, 5);
     }
 
     localStorage.setItem('imcHistory', JSON.stringify(history));
