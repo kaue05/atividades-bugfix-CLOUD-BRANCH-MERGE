@@ -16,9 +16,9 @@ function calculateIMC(weight, height) {
 function getClassification(imc) {
     if (imc < 18.5) {
         return { text: 'Abaixo do peso', class: 'underweight' };
-    } else if (imc >= 18.5 && imc < 20) {  // ❌ ERRADO: deveria ser < 25
+    } else if (imc >= 18.5 && imc < 25) {  // ✅ CORRETO: até 24.9
         return { text: 'Peso normal', class: 'normal' };
-    } else if (imc >= 25 && imc < 29.9) {
+    } else if (imc >= 25 && imc < 30) {  // ✅ CORRETO: até 29.9
         return { text: 'Sobrepeso', class: 'overweight' };
     } else {
         return { text: 'Obesidade', class: 'obese' };
