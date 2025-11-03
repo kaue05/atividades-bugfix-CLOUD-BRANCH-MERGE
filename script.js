@@ -9,7 +9,7 @@ const clearHistoryBtn = document.getElementById('clearHistory');
 
 // BUG 1: Fórmula do IMC está incorreta (dividindo por altura ao invés de altura²)
 function calculateIMC(weight, height) {
-    return weight / height;  // ❌ ERRADO: deveria ser weight / (height * height)
+    return weight / (height * height);  // ✅ CORRETO: IMC = peso / altura²
 }
 
 // BUG 2: Classificação do IMC com intervalos errados
